@@ -1,56 +1,18 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
+if has('nvim')
+    let g:rc_dir = expand('$HOME/.config/nvim/rc')
+else
+    let g:rc_dir = expand('$HOME/.vim/rc')
 endif
 
-" dein自体の自動インストール
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-let s:dein_dir = s:cache_home . '/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if !isdirectory(s:dein_repo_dir)
-  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
-endif
+" rcファイル読み込み関数
+function! s:source_rc(rc_file_name)
+    let rc_file = expand(g:rc_dir . '/' . a:rc_file_name)
+    if filereadable(rc_file)
+        execute 'source' rc_file
+    endif
+endfunction
 
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
-
-" Required:
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('jistr/vim-nerdtree-tabs')
-  call dein#add('tomasr/molokai')
-  call dein#add('lervag/vimtex')
-  call dein#add('thinca/vim-quickrun')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-  let s:toml = '~/.config/nvim/dein-plugins.toml'
-  call dein#load_toml(s:toml, {'lazy': 0})
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
-
+call s:source_rc('dein.rc.vim')
 
 "settinng
 "文字コードをUFT-8に設定
@@ -108,12 +70,15 @@ nnoremap j gj
 nnoremap k gk
 
 syntax on
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
 set t_Co=256
-
+if !empty(globpath(&rtp, 'colors/molokai.vim'))
+    colorscheme molokai
+    let g:molokai_original = 1
+    let g:rehash256 = 1
+    set background=dark
+else
+    colorscheme torte
+endif
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -139,21 +104,3 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-
-
-" プラグイン系
-" 不可視ファイルを表示する
-let NERDTreeShowHidden = 1
-" Ctrl+eでNERD Treeの表示切り替え
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-" ツリーと編集領域を移動する
-nmap <Leader><Tab> <C-w>w
-" ファイルが指定されていなければNERD Treeを有効にする
-if argc() == 0
-    let g:nerdtree_tabs_open_on_console_startup = 1
-end
-" vimtex
-let g:vimtex_compiler_latexmk = {'callback' : 0}
-let g:vimtex_view_enabled = 0
-" quickrun
-let g:quickrun_config = {'*': {'hook/time/enable': '1'}}
