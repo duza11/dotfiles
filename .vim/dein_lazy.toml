@@ -1,4 +1,8 @@
 [[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_event = 'InsertEnter'
+
+[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
 hook_source = '''
@@ -16,11 +20,6 @@ hook_source = '''
 [[plugins]]
 repo  = 'cespare/vim-toml'
 on_ft = 'toml'
-
-[[plugins]]
-repo = 'Shougo/vimshell'
-rev = '3787e5'
-cmd = 'VimShell'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'

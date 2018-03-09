@@ -1,3 +1,7 @@
+augroup MyAutoCmd
+    autocmd!
+augroup END
+
 if has('nvim')
     let g:rc_dir = expand('$HOME/.config/nvim/rc')
 else
