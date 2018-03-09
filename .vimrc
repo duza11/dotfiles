@@ -15,6 +15,7 @@ endfunction
 call s:source_rc('dein.rc.vim')
 
 "settinng
+set encoding=utf-8
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -29,6 +30,8 @@ set hidden
 set showcmd
 " Space + Enterで1行挿入
 noremap <Space><CR> o<ESC>
+" 特殊文字対策
+set ambiwidth=double
 " 自動ペーストモード
 if &term =~ "xterm"
     let &t_ti .= "\e[?2004h"

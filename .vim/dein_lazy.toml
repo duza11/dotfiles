@@ -33,3 +33,7 @@ repo = 'Shougo/neoyank.vim'
 on_source = 'denite.nvim'
 on_event = 'TextYankPost'
 hook_source = 'nmap <silent> <C-u><C-y> :<C-u>Denite neoyank<CR>'
+
+[[plugins]]
+repo = 'suan/vim-instant-markdown'
+on_ft = 'markdown'

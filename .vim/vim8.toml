@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+on_source = 'deoplete.nvim'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_source = 'deoplete.nvim'

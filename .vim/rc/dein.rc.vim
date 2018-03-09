@@ -29,6 +29,9 @@ if dein#load_state(s:dein_dir)
     if has('python3')
         call dein#load_toml(s:toml . '/python.toml', {'lazy': 1})
     endif
+    if !has('nvim')
+        call dein#load_toml(s:toml . '/vim8.toml', {'lazy': 1})
+    endif
 
     " Required:
     call dein#end()
