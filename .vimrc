@@ -32,8 +32,9 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" Space + Enterで1行挿入
-noremap <Space><CR> o<ESC>
+" Space + o or Oで1行挿入
+noremap <Space>o o<ESC>
+noremap <Space>O O<ESC>
 " 特殊文字対策
 set ambiwidth=double
 " 自動ペーストモード
