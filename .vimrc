@@ -34,7 +34,7 @@ noremap <Space>O O<ESC>
 " 特殊文字対策
 set ambiwidth=double
 " 自動ペーストモード
-if &term =~ "xterm"
+if !has('nvim') && &term =~ "xterm"
     let &t_ti .= "\e[?2004h"
     let &t_te .= "\e[?2004l"
     let &pastetoggle = "\e[201~"

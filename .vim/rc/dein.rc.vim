@@ -11,7 +11,7 @@ if !isdirectory(s:dein_repo_dir)
     call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
+execute 'set runtimepath^=' . s:dein_repo_dir
 
 " Required:
 if dein#load_state(s:dein_dir)
@@ -23,7 +23,7 @@ if dein#load_state(s:dein_dir)
     " Add or remove your plugins here:
 
     " You can specify revision/branch/tag.
-    let s:toml = '$HOME/.vim'
+    let s:toml = expand('$HOME/.vim')
     call dein#load_toml(s:toml . '/dein.toml', {'lazy': 0})
     call dein#load_toml(s:toml . '/dein_lazy.toml', {'lazy': 1})
 
