@@ -2,11 +2,7 @@ augroup MyAutoCmd
     autocmd!
 augroup END
 
-if has('nvim')
-    let g:rc_dir = expand('$HOME/.config/nvim/rc')
-else
-    let g:rc_dir = expand('$HOME/.vim/rc')
-endif
+let g:rc_dir = expand('$HOME/.vim/rc')
 
 " rcファイル読み込み関数
 function! s:source_rc(rc_file_name)
@@ -79,11 +75,8 @@ nnoremap k gk
 
 syntax on
 set t_Co=256
-if !empty(globpath(&rtp, 'colors/molokai.vim'))
-    colorscheme molokai
-    let g:molokai_original = 1
-    let g:rehash256 = 1
-    set background=dark
+if !empty(globpath(&rtp, 'colors/codedark.vim'))
+    colorscheme codedark
 else
     colorscheme torte
 endif
@@ -97,8 +90,10 @@ set expandtab
 set tabstop=4
 " 行頭でのTab文字の表示幅
 set shiftwidth=4
-
-
+augroup FileTypeIndent
+    autocmd!
+    autocmd FileType sh setlocal noexpandtab
+augroup END
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase

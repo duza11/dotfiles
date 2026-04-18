@@ -23,15 +23,9 @@ if dein#load_state(s:dein_dir)
     " Add or remove your plugins here:
 
     " You can specify revision/branch/tag.
-    let s:toml = '$HOME/.config/nvim'
+    let s:toml = '$HOME/.vim'
     call dein#load_toml(s:toml . '/dein.toml', {'lazy': 0})
     call dein#load_toml(s:toml . '/dein_lazy.toml', {'lazy': 1})
-    if has('python3')
-        call dein#load_toml(s:toml . '/python.toml', {'lazy': 1})
-    endif
-    if !has('nvim' && v:version >= 800)
-        call dein#load_toml(s:toml . '/vim8.toml', {'lazy': 1})
-    endif
 
     " Required:
     call dein#end()
