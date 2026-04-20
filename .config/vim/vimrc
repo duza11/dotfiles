@@ -1,22 +1,23 @@
 augroup MyAutoCmd
-    autocmd!
+  autocmd!
 augroup END
 
-let g:rc_dir = expand('$HOME/.vim/rc')
+let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
+let g:rc_dir = expand(s:config_home . '/vim/rc')
 
 " rcファイル読み込み関数
 function! s:source_rc(rc_file_name)
-    let rc_file = expand(g:rc_dir . '/' . a:rc_file_name)
-    if filereadable(rc_file)
-        execute 'source' rc_file
-    endif
+  let rc_file = expand(g:rc_dir . '/' . a:rc_file_name)
+  if filereadable(rc_file)
+    execute 'source' rc_file
+  endif
 endfunction
 
 call s:source_rc('dein.rc.vim')
 
-"settinng
+" settinng
 set encoding=utf-8
-"文字コードをUFT-8に設定
+" 文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -35,19 +36,19 @@ noremap <Space>O O<ESC>
 set ambiwidth=double
 " 自動ペーストモード
 if !has('nvim') && &term =~ "xterm"
-    let &t_ti .= "\e[?2004h"
-    let &t_te .= "\e[?2004l"
-    let &pastetoggle = "\e[201~"
+  let &t_ti .= "\e[?2004h"
+  let &t_te .= "\e[?2004l"
+  let &pastetoggle = "\e[201~"
 
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
+  function XTermPasteBegin(ret)
+    set paste
+    return a:ret
+  endfunction
 
-    noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-    cnoremap <special> <Esc>[200~ <nop>
-    cnoremap <special> <Esc>[201~ <nop>
+  noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
+  inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+  cnoremap <special> <Esc>[200~ <nop>
+  cnoremap <special> <Esc>[201~ <nop>
 endif
 
 " 見た目系
@@ -76,9 +77,9 @@ nnoremap k gk
 syntax on
 set t_Co=256
 if !empty(globpath(&rtp, 'colors/codedark.vim'))
-    colorscheme codedark
+  colorscheme codedark
 else
-    colorscheme torte
+  colorscheme torte
 endif
 
 " Tab系
@@ -87,12 +88,12 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=4
+set tabstop=2
 " 行頭でのTab文字の表示幅
-set shiftwidth=4
+set shiftwidth=2
 augroup FileTypeIndent
-    autocmd!
-    autocmd FileType sh setlocal noexpandtab
+  autocmd!
+  autocmd FileType sh setlocal noexpandtab
 augroup END
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
