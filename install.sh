@@ -36,7 +36,7 @@ update_dotfiles() {
 	nix flake update
 	if [ $os == "darwin" ]; then
 		!(has "brew") && install_brew
-		sudo darwin-rebuild -- switch --flake .
+		sudo darwin-rebuild switch --flake .
 	else
 		nix run nixpkgs\#home-manager -- switch --flake .
 	fi
