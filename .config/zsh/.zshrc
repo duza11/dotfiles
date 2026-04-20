@@ -22,6 +22,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+alias gcd='cd "$(ghq list --full-path | fzf)"'
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
