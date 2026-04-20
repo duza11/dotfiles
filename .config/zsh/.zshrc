@@ -26,6 +26,7 @@ alias gcd='cd "$(ghq list --full-path | fzf --height 40%)"'
 
 source <(fzf --zsh)
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob="!.git/*"'
+export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid --line-range :100 {}"'
 
 setopt PROMPT_SUBST
 autoload -Uz vcs_info

@@ -10,6 +10,7 @@
     # release notes.
     stateVersion = "25.11"; # Please read the comment before changing."
     packages = with pkgs; [
+      bat
       delta
       fzf
       ghq
