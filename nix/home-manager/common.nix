@@ -16,6 +16,7 @@
       git
       lazygit
       neovim
+      ripgrep
       tmux
       vim
     ];

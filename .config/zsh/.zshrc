@@ -24,8 +24,8 @@ alias mv='mv -i'
 
 alias gcd='cd "$(ghq list --full-path | fzf --height 40%)"'
 
-# Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob="!.git/*"'
 
 setopt PROMPT_SUBST
 autoload -Uz vcs_info
