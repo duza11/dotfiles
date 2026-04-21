@@ -10,6 +10,7 @@ has() {
 install_nix() {
 	echo "Install nix"
 	curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install --enable-flakes
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 }
 
 install_brew() {
