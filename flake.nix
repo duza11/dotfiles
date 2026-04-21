@@ -28,7 +28,7 @@
       linuxSystem = "x86_64-linux";
       darwinSystem = "aarch64-darwin";
 
-      linux_username = builtins.getEnv "USER";
+      linuxUserName = builtins.getEnv "USER";
 
       mkPkgs = system: import nixpkgs { inherit system; };
 
@@ -38,11 +38,11 @@
     {
       formatter.${linuxSystem} = pkgsLinux.nixfmt;
       formatter.${darwinSystem} = pkgsDarwin.nixfmt;
-      homeConfigurations.${linux_username} = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${linuxUserName} = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgsLinux;
         extraSpecialArgs = {
           inherit inputs;
-          username = linux_username;
+          userName = linuxUserName;
         };
         modules = [
           ./nix/home-manager/common.nix
@@ -53,7 +53,7 @@
         system = "aarch64-darwin";
         specialArgs = {
           inherit self inputs;
-          username = "duza";
+          userName = "duza";
         };
         modules = [
           ./nix/nix-darwin/default.nix

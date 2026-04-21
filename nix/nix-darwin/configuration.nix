@@ -1,7 +1,7 @@
 {
   self,
   inputs,
-  username,
+  userName,
   ...
 }:
 {
@@ -12,7 +12,7 @@
     configurationRevision = self.rev or self.dirtyRev or null;
 
     # Mac 本体のユーザー設定を変更する際に必要
-    primaryUser = username;
+    primaryUser = userName;
   };
 
   nixpkgs = {
