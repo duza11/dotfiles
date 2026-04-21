@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  mkConfig = import ../utils/mkConfig.nix;
+in
 {
   home = {
     username = "duza";
@@ -16,10 +19,7 @@
     };
   };
   xdg.configFile = {
-    karabiner = {
-      source = ../../.config/karabiner;
-      recursive = true;
-    };
+    karabiner = mkConfig "karabiner";
   };
   programs = {
     zsh = {

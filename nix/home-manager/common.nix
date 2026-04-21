@@ -3,6 +3,9 @@
   pkgs,
   ...
 }:
+let
+  mkConfig = import ../utils/mkConfig.nix;
+in
 {
   home = {
     # You should not change this value, even if you update Home Manager. If you do
@@ -26,30 +29,12 @@
     };
   };
   xdg.configFile = {
-    git = {
-      source = ../../.config/git;
-      recursive = true;
-    };
-    lazygit = {
-      source = ../../.config/lazygit;
-      recursive = true;
-    };
-    nix = {
-      source = ../../.config/nix;
-      recursive = true;
-    };
-    nvim = {
-      source = ../../.config/nvim;
-      recursive = true;
-    };
-    tmux = {
-      source = ../../.config/tmux;
-      recursive = true;
-    };
-    vim = {
-      source = ../../.config/vim;
-      recursive = true;
-    };
+    git = mkConfig "git";
+    lazygit = mkConfig "lazygit";
+    nix = mkConfig "nix";
+    nvim = mkConfig "nvim";
+    tmux = mkConfig "tmux";
+    vim = mkConfig "vim";
   };
 
   programs.home-manager.enable = true;
