@@ -6,7 +6,7 @@
 }:
 {
   home = {
-    inherit userName;
+    username = userName;
     homeDirectory = "/home/${userName}";
     packages = with pkgs; [
       blesh
