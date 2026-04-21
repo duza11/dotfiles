@@ -26,20 +26,21 @@
     }@inputs:
     let
       system = "aarch64-darwin";
+      username = builtins.getEnv "USER";
       pkgs = import nixpkgs { inherit system; };
     in
     {
       formatter.${system} = pkgs.nixfmt;
-      # homeConfigurations."duza" = home-manager.lib.homeManagerConfiguration {
-      #   inherit pkgs;
-      #   extraSpecialArgs = {
-      #     inherit inputs;
-      #   };
-      #   modules = [
-      #     ./nix/home-manager/common.nix
-      #     ./nix/home-manager/darwin.nix
-      #   ];
-      # };
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs username;
+        };
+        modules = [
+          ./nix/home-manager/common.nix
+          ./nix/home-manager/linux.nix
+        ];
+      };
       darwinConfigurations.d-darwin = nix-darwin.lib.darwinSystem {
         inherit system;
 
