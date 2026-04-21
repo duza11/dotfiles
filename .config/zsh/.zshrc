@@ -22,7 +22,11 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias gcd='cd $(ghq list --full-path | fzf --height 40% --preview "bat --color=always --style=header,grid --line-range :30 {}/README.*")'
+gcd() {
+  local dir=$(ghq list --full-path | fzf --height 40% \
+    --preview "bat --color=always --style=header,grid --line-range :30 {}/README.*")
+  [ -n "$dir" ] && cd "$dir"
+}
 
 source <(fzf --zsh)
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude ".git/"'
