@@ -12,6 +12,7 @@
     packages = with pkgs; [
       bat
       delta
+      fd
       fzf
       ghq
       git
