@@ -42,7 +42,7 @@
         pkgs = pkgsLinux;
         extraSpecialArgs = {
           inherit inputs;
-          userName = linuxUserName;
+          username = linuxUserName;
         };
         modules = [
           ./nix/home-manager/common.nix
@@ -53,7 +53,7 @@
         system = "aarch64-darwin";
         specialArgs = {
           inherit self inputs;
-          userName = "duza";
+          username = "duza";
         };
         modules = [
           ./nix/nix-darwin/default.nix

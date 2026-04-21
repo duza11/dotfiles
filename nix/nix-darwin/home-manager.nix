@@ -1,11 +1,11 @@
 {
   inputs,
-  userName,
+  username,
   ...
 }:
 {
   # ホームディレクトリを指定
-  users.users.duza.home = "/Users/${userName}";
+  users.users.duza.home = "/Users/${username}";
 
   imports = [
     inputs.home-manager.darwinModules.home-manager

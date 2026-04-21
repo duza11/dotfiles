@@ -1,13 +1,13 @@
 {
   inputs,
   pkgs,
-  userName,
+  username,
   ...
 }:
 {
   home = {
-    username = userName;
-    homeDirectory = "/home/${userName}";
+    inherit username;
+    homeDirectory = "/home/${username}";
     packages = with pkgs; [
       blesh
     ];
