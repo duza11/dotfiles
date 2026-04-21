@@ -28,7 +28,7 @@ install_dotfiles() {
 		!(has "brew") && install_brew
 		sudo nix run nix-darwin -- switch --flake github:duza11/dotfiles
 	else
-		nix run nixpkgs\#home-manager -- switch --flake github:duza11/dotfiles --impure
+		nix run nixpkgs\#home-manager -- switch --flake github:duza11/dotfiles --impure -b backup
 	fi
 }
 
@@ -39,7 +39,7 @@ update_dotfiles() {
 		!(has "brew") && install_brew
 		sudo darwin-rebuild switch --flake .
 	else
-		nix run nixpkgs\#home-manager -- switch --flake . --impure
+		nix run nixpkgs\#home-manager -- switch --flake . --impure -b backup
 	fi
 }
 
