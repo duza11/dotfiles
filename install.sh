@@ -25,9 +25,9 @@ install_dotfiles() {
 	!(has "nix") && install_nix
 	if [ $os == "darwin" ]; then
 		!(has "brew") && install_brew
-		sudo nix run nix-darwin -- switch --flake .
+		sudo nix run nix-darwin -- switch --flake github:duza11/dotfiles
 	else
-		nix run nixpkgs\#home-manager -- switch --flake .
+		nix run nixpkgs\#home-manager -- switch --flake github:duza11/dotfiles
 	fi
 }
 
