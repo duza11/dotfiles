@@ -5,7 +5,7 @@
 }:
 {
   # ホームディレクトリを指定
-  users.users.duza.home = "/Users/${username}";
+  users.users.${username}.home = "/Users/${username}";
 
   imports = [
     inputs.home-manager.darwinModules.home-manager
@@ -18,7 +18,7 @@
 
     extraSpecialArgs = { inherit inputs; };
 
-    users.duza = {
+    users.${username} = {
       imports = [
         ../home-manager/common.nix
         ../home-manager/darwin.nix

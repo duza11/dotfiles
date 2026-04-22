@@ -9,8 +9,6 @@ let
 in
 {
   home = {
-    username = "duza";
-    homeDirectory = "/Users/duza";
     packages = with pkgs; [
       zsh-completions
     ];
