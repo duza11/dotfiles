@@ -58,3 +58,5 @@ PROMPT='$( [ -n "$SSH_CONNECTION" ] && printf "%s[SSH]%s " "$C_SSH" "$C_RESET" )
 "$C_DIR%~$C_RESET "\
 '$( [ -n "$vcs_info_msg_0_" ] && printf "%s%s%s" "$C_GIT" "$vcs_info_msg_0_" "$C_RESET" )'\
 $'\n%# '
+
+export EDITOR=nvim

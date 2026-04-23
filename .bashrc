@@ -81,6 +81,8 @@ PS1='$( [ -n "$SSH_CONNECTION" ] && printf "'"$C_SSH"'[SSH]'"$C_RESET"' " )'\
 shopt -s autocd
 shopt -s histappend
 
+export EDITOR=nvim
+
 # Local / secret settings
 [ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
 
