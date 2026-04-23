@@ -20,6 +20,7 @@ in
   xdg.configFile = {
     ghostty = mkConfig "ghostty";
     karabiner = mkConfig "karabiner";
+    "zsh/.zprofile".source = ../../.config/zsh/.zprofile;
   };
   programs = {
     zsh = {

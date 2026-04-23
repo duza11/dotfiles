@@ -20,6 +20,7 @@ install_brew() {
 	fi
 	echo "Install brew"
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 }
 
 install_dotfiles() {
