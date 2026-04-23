@@ -176,3 +176,6 @@ repo = 'Shougo/context_filetype.vim'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
