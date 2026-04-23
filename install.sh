@@ -34,7 +34,18 @@ install_dotfiles() {
 
 update_dotfiles() {
 	!(has "nix") && install_nix
-	nix flake update
+	update_lock=false
+	while [ $# -gt 0 ]; do
+		case "$1" in
+			--upgrade)
+				update_lock=true
+				;;
+		esac
+		shift
+	done
+	if [ "$update_lock" == true ]; then
+		nix flake update
+	fi
 	if [ $os == "darwin" ]; then
 		!(has "brew") && install_brew
 		sudo darwin-rebuild switch --flake .
@@ -46,17 +57,21 @@ update_dotfiles() {
 os=`uname | tr '[A-Z]' '[a-z]'`
 
 subcommand="$1"
-if [ "$subcommand" == "" ]; then
-	install_dotfiles
-fi
-shift
+shift || true
 
 case $subcommand in
 	install)
 		install_dotfiles
 		;;
 	update)
-		update_dotfiles
+		upgrade=false
+		if [ "$2" == "--upgrade" ]; then
+			upgrade=true
+		fi
+		update_dotfiles $@
+		;;
+	"")
+		install_dotfiles
 		;;
 	*)
 		echo "$subcommand is not a command"
