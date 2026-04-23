@@ -10,6 +10,7 @@ in
 {
   home = {
     packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
       zsh-completions
     ];
     file = {
@@ -17,6 +18,7 @@ in
     };
   };
   xdg.configFile = {
+    ghostty = mkConfig "ghostty";
     karabiner = mkConfig "karabiner";
   };
   programs = {
