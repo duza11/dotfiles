@@ -168,7 +168,7 @@ hook_add = '''
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = ;airblade/vim-gitgutter'
+repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
