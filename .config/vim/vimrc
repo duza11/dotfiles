@@ -2,6 +2,8 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+let g:mapleader = "\<Space>"
+
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
 let g:rc_dir = expand(s:config_home . '/vim/rc')
 
