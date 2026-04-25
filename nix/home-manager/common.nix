@@ -21,6 +21,7 @@ in
       git
       lazygit
       neovim
+      nixd
       ripgrep
       tmux
       vim

@@ -1,4 +1,8 @@
 [[plugins]]
+repo  = 'LnL7/vim-nix'
+on_ft = 'nix'
+
+[[plugins]]
 repo  = 'cespare/vim-toml'
 on_ft = 'toml'
 

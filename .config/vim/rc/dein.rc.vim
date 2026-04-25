@@ -27,6 +27,9 @@ if dein#load_state(s:dein_dir)
   let s:toml = expand('$XDG_CONFIG_HOME/vim')
   call dein#load_toml(s:toml . '/dein.toml', {'lazy': 0})
   call dein#load_toml(s:toml . '/dein_lazy.toml', {'lazy': 1})
+  if has('nvim')
+    call dein#load_toml(s:toml . '/dein_nvim.toml', {'lazy': 0})
+  endif
 
   " Required:
   call dein#end()
