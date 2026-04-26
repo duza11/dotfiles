@@ -1,6 +1,5 @@
-source $HOME/.config/vim/vimrc
+vim.cmd.source('$HOME/.config/vim/vimrc')
 
-lua << EOF
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
@@ -23,4 +22,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 vim.lsp.enable('nixd')
-EOF
