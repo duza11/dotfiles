@@ -1,2 +1,8 @@
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+
+[[plugins]]
+repo = 'Saghen/blink.cmp'
+rev = 'v1.*'
+merged = 0
+lazy = 0

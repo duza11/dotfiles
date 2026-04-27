@@ -21,4 +21,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   end,
 })
+require('blink.cmp').setup({
+  keymap = {
+    preset = 'enter',
+  },
+  sources = {
+    default = { 'lsp', 'path', 'buffer' },
+  },
+})
 vim.lsp.enable('nixd')
+vim.lsp.config('nixd', {
+  capabilities = require('blink.cmp').get_lsp_capabilities()
+})
