@@ -5,3 +5,9 @@ git:
 gui:
   language: "ja"
   showIcons: true
+
+customCommands:
+  - command: meteor
+    context: files
+    output: terminal
+    key: C

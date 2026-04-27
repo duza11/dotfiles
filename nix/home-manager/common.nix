@@ -13,12 +13,14 @@ in
     stateVersion = "25.11"; # Please read the comment before changing."
     packages = with pkgs; [
       bat
+      commitizen
       delta
       fd
       fzf
       ghq
       git
       lazygit
+      meteor-git
       neovim
       nixd
       ripgrep
