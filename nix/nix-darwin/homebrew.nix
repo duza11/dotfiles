@@ -8,6 +8,7 @@
     taps = [ ];
     brews = [ ];
     casks = [
+      "alt-tab"
       "ghostty"
       "google-chrome"
       "google-japanese-ime"
