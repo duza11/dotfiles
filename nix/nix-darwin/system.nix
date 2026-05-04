@@ -19,7 +19,7 @@
         autohide = true;
         show-recents = false;
         mineffect = "scale";
-        orientation = "left";
+        orientation = "bottom";
         wvous-bl-corner = 1;
         wvous-br-corner = 4;
         wvous-tl-corner = 1;
