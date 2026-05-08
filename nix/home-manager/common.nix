@@ -25,7 +25,9 @@ in
       nixd
       ripgrep
       tmux
+      typescript-language-server
       vim
+      vscode-langservers-extracted
     ];
     sessionVariables = {
     };

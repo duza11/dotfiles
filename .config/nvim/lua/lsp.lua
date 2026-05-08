@@ -29,4 +29,4 @@ require('blink.cmp').setup({
     default = { 'lsp', 'path', 'buffer' },
   },
 })
-vim.lsp.enable({ 'nixd' })
+vim.lsp.enable({ 'nixd', 'html', 'ts_ls', 'cssls' })
