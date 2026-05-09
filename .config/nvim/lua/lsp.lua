@@ -7,6 +7,17 @@ vim.diagnostic.config({
 
 local augroup = vim.api.nvim_create_augroup('LspConfig', {})
 
+---@param count integer
+---@return function
+local diagnostic_jump = function(count)
+  return function()
+    vim.diagnostic.jump({
+      count = count,
+      float = true,
+    })
+  end
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = augroup,
   callback = function(args)
@@ -16,8 +27,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '[d', diagnostic_jump(-1), opts)
+    vim.keymap.set('n', ']d', diagnostic_jump(1), opts)
   end,
 })
 
