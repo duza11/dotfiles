@@ -28,5 +28,24 @@ require('blink.cmp').setup({
   sources = {
     default = { 'lsp', 'path', 'buffer' },
   },
+  completion = {
+    list = {
+      selection = {
+        preselect = true,
+        auto_insert = false,
+      },
+    },
+    documentation = {
+      auto_show = true,
+      window = { border = 'solid' },
+    },
+  },
+  signature = {
+    enabled = true,
+    window = {
+      border = 'solid',
+      show_documentation = true,
+    },
+  },
 })
 vim.lsp.enable({ 'nixd', 'html', 'ts_ls', 'cssls' })
