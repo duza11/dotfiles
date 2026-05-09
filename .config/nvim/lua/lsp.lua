@@ -48,4 +48,4 @@ require('blink.cmp').setup({
     },
   },
 })
-vim.lsp.enable({ 'nixd', 'html', 'ts_ls', 'cssls' })
+vim.lsp.enable({ 'nixd', 'html', 'ts_ls', 'cssls', 'lua_ls' })

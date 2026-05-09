@@ -20,6 +20,7 @@ in
       ghq
       git
       lazygit
+      lua-language-server
       meteor-git
       neovim
       nixd

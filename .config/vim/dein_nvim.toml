@@ -6,3 +6,7 @@ repo = 'Saghen/blink.cmp'
 rev = 'v1.*'
 merged = 0
 lazy = 0
+
+[[plugins]]
+repo = 'folke/lazydev.nvim'
+lazy = 0
