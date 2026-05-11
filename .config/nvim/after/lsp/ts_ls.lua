@@ -6,7 +6,6 @@ return {
     'typescript',
     'typescriptreact',
   },
-  capabilities = require('blink.cmp').get_lsp_capabilities(),
   root_markers = {
     'package.json',
     'tsconfig.json',

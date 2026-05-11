@@ -1,7 +1,6 @@
 require('lazydev').setup()
 
 return {
-  capabilities = require('blink.cmp').get_lsp_capabilities(),
   settings = {
     Lua = {
       runtime = {

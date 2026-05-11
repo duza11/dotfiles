@@ -5,6 +5,5 @@ return {
     'scss',
     'less',
   },
-  capabilities = require('blink.cmp').get_lsp_capabilities(),
   root_markers = { '.git' },
 }
