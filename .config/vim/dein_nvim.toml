@@ -10,3 +10,11 @@ lazy = 0
 [[plugins]]
 repo = 'folke/lazydev.nvim'
 lazy = 0
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_post_update = 'TSUpdate'
+
+[[plugins]]
+repo = 'jmbuhr/otter.nvim'
+

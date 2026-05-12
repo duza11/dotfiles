@@ -26,6 +26,7 @@ in
       nixd
       ripgrep
       tmux
+      tree-sitter
       typescript-language-server
       vim
       vscode-langservers-extracted
