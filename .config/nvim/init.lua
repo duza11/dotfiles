@@ -1,4 +1,4 @@
-vim.cmd.source('$HOME/.config/vim/vimrc')
-
-require('lsp')
-require('treesitter')
+require('config.lazy')
+require('config.options')
+require('config.keymaps')
+require('config.autocmds')
