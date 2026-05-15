@@ -45,7 +45,7 @@ return {
       defaults = {
         mappings = {
           i = {
-            ['<Esc>'] = require('telescope.actions').close,
+            ['<Esc>'] = function (bufnr) require('telescope.actions').close(bufnr) end,
           },
         },
       },
