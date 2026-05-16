@@ -15,6 +15,7 @@ in
       bat
       commitizen
       delta
+      emmet-language-server
       fd
       fzf
       ghq

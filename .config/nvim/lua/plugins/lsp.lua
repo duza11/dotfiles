@@ -143,6 +143,7 @@ return {
 
       vim.lsp.enable({
         'cssls',
+        'emmet_language_server',
         'eslint',
         'html',
         'lua_ls',
