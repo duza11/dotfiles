@@ -24,7 +24,9 @@ in
       meteor-git
       neovim
       nixd
+      nixfmt
       ripgrep
+      stylua
       tmux
       tree-sitter
       typescript-language-server

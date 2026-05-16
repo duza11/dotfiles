@@ -25,21 +25,11 @@
       ...
     }@inputs:
     let
-      linuxSystem = "x86_64-linux";
-      darwinSystem = "aarch64-darwin";
-
       linuxUserName = builtins.getEnv "USER";
-
-      mkPkgs = system: import nixpkgs { inherit system; };
-
-      pkgsLinux = mkPkgs linuxSystem;
-      pkgsDarwin = mkPkgs darwinSystem;
     in
     {
-      formatter.${linuxSystem} = pkgsLinux.nixfmt;
-      formatter.${darwinSystem} = pkgsDarwin.nixfmt;
       homeConfigurations.${linuxUserName} = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsLinux;
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
         extraSpecialArgs = {
           inherit inputs;
           username = linuxUserName;
