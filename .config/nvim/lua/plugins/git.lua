@@ -50,10 +50,10 @@ return {
           return '<Ignore>'
         end, 'Previous git hunk')
 
-        map('n', '<leader>hs', gs.stage_hunk, 'Stage hunk')
-        map('n', '<leader>hr', gs.reset_hunk, 'Reset hunk')
-        map('n', '<leader>hp', gs.preview_hunk, 'Preview hunk')
-        map('n', '<leader>hb', gs.blame_line, 'Blame line')
+        map('n', '<leader>gs', gs.stage_hunk, 'Stage hunk')
+        map('n', '<leader>gr', gs.reset_hunk, 'Reset hunk')
+        map('n', '<leader>gp', gs.preview_hunk, 'Preview hunk')
+        map('n', '<leader>gb', gs.blame_line, 'Blame line')
       end,
     },
   },

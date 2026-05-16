@@ -14,6 +14,10 @@ vim.opt.autoread = true
 vim.opt.hidden = true
 -- 入力中のコマンドをステータスに表示する
 vim.opt.showcmd = true
+-- splitは下に開く
+vim.opt.splitbelow = true
+-- vplistは右に開く
+vim.opt.splitright = true
 
 -- =========================
 -- Appearance

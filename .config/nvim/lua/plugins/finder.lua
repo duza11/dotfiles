@@ -4,34 +4,29 @@ return {
     cmd = 'Telescope',
     keys = {
       {
-        '<leader>f',
+        '<leader>ff',
         '<cmd>Telescope find_files<cr>',
         desc = 'Find files',
       },
       {
-        '<leader>g',
-        '<cmd>Telescope git_files<cr>',
-        desc = 'Git files',
-      },
-      {
-        '<leader>G',
+        '<leader>fG',
         '<cmd>Telescope git_status<cr>',
         desc = 'Git status',
       },
       {
-        '<leader>b',
+        '<leader>fb',
         '<cmd>Telescope buffers<cr>',
         desc = 'Buffers',
       },
       {
-        '<leader>h',
+        '<leader>fr',
         '<cmd>Telescope oldfiles<cr>',
-        desc = 'File history',
+        desc = 'File recent files',
       },
       {
-        '<leader>r',
+        '<leader>fg',
         '<cmd>Telescope live_grep<cr>',
-        desc = 'Ripgrep',
+        desc = 'Grep',
       },
     },
     dependencies = {
@@ -45,7 +40,9 @@ return {
       defaults = {
         mappings = {
           i = {
-            ['<Esc>'] = function (bufnr) require('telescope.actions').close(bufnr) end,
+            ['<Esc>'] = function(bufnr)
+              require('telescope.actions').close(bufnr)
+            end,
           },
         },
       },
@@ -58,7 +55,7 @@ return {
           file_ignore_patterns = { '.git/' },
           additional_args = function()
             return { '--hidden' }
-          end
+          end,
         },
       },
     },

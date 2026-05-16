@@ -4,3 +4,11 @@ vim.keymap.set('n', 'k', 'gk', { noremap = true, silent = true })
 
 -- ESC連打で検索ハイライト解除
 vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>', { noremap = true, silent = true })
+
+-- システムクリップボードへコピー
+vim.keymap.set('v', '<leader>y', '"+y', {
+  desc = 'Yank selection to system clipboard',
+})
+vim.keymap.set('n', '<leader>Y', '"+yy', {
+  desc = 'Yank line to system clipboard',
+})
