@@ -34,23 +34,17 @@ local function hover()
     return
   end
 
-  local params = vim.lsp.util.make_position_params(
-    winid,
-    otter_client.offset_encoding
-  )
+  local params = vim.lsp.util.make_position_params(winid, otter_client.offset_encoding)
 
   vim.lsp.buf_request_all(bufnr, 'textDocument/hover', params, function(results)
     for id, res in pairs(results) do
       local client = vim.lsp.get_client_by_id(id)
-      if client
-        and client.name:match('^otter')
-        and res.result
-        then
-          vim.lsp.util.open_floating_preview(
-            vim.lsp.util.convert_input_to_markdown_lines(res.result.contents),
-            'markdown'
-          )
-          return
+      if client and client.name:match('^otter') and res.result then
+        vim.lsp.util.open_floating_preview(
+          vim.lsp.util.convert_input_to_markdown_lines(res.result.contents),
+          'markdown'
+        )
+        return
       end
     end
   end)
@@ -155,6 +149,6 @@ return {
         'nixd',
         'ts_ls',
       })
-    end
+    end,
   },
 }

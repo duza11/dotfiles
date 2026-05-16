@@ -69,9 +69,9 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    config = function ()
+    config = function()
       require('ibl').setup()
-    end
+    end,
   },
   {
     'folke/which-key.nvim',
@@ -85,5 +85,5 @@ return {
         desc = 'Buffer Local Keymaps (which-key)',
       },
     },
-  }
+  },
 }

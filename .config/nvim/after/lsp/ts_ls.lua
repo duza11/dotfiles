@@ -10,6 +10,6 @@ return {
     'package.json',
     'tsconfig.json',
     'jsconfig.json',
-    '.git'
+    '.git',
   },
 }

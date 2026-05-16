@@ -4,7 +4,7 @@ return {
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      require('nvim-treesitter').install {
+      require('nvim-treesitter').install({
         'bash',
         'css',
         'html',
@@ -19,7 +19,7 @@ return {
         'vimdoc',
         'yaml',
         'zsh',
-      }
+      })
       vim.treesitter.language.register('html', 'riot')
       vim.opt.foldmethod = 'expr'
       vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
@@ -34,7 +34,9 @@ return {
           'javascript',
           'yaml',
         },
-        callback = function() vim.treesitter.start() end,
+        callback = function()
+          vim.treesitter.start()
+        end,
       })
     end,
   },
@@ -49,13 +51,13 @@ return {
         diagnostic_update_events = { 'TextChanged' },
       },
     },
-    config = function ()
+    config = function()
       vim.api.nvim_create_autocmd('FileType', {
         pattern = { 'html', 'riot' },
         callback = function()
           require('otter').activate({ 'javascript', 'css' })
         end,
       })
-    end
+    end,
   },
 }
