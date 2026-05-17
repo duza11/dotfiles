@@ -24,6 +24,8 @@ vim.opt.splitright = true
 -- =========================
 -- 行番号を表示
 vim.opt.number = true
+-- 行番号の相対表示
+vim.opt.relativenumber = true
 -- 現在の行を強調表示
 vim.opt.cursorline = true
 -- 現在の列を強調表示
