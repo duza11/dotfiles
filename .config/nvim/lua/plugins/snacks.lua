@@ -82,5 +82,47 @@ return {
       end,
       desc = 'Toggle terminal',
     },
+    {
+      'cc',
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = 'Commands',
+    },
+    {
+      'ch',
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = 'Command history',
+    },
+    {
+      'gO',
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+      desc = 'LSP symbols',
+    },
+    {
+      'gri',
+      function()
+        Snacks.picker.lsp_implementations()
+      end,
+      desc = 'LSP implementaions',
+    },
+    {
+      'grr',
+      function()
+        Snacks.picker.lsp_references()
+      end,
+      desc = 'LSP referencs',
+    },
+    {
+      'grt',
+      function()
+        Snacks.picker.lsp_type_definitions()
+      end,
+      desc = 'LSP type definitions',
+    },
   },
 }
