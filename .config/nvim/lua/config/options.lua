@@ -69,6 +69,11 @@ vim.opt.fillchars = {
   foldinner = ' ',
 }
 vim.opt.foldcolumn = '1'
+-- diffハイライト
+vim.cmd([[highlight DiffAdd guibg=#214821]])
+vim.cmd([[highlight DiffChange guibg=#303030]])
+vim.cmd([[highlight DiffDelete guibg=#4c1e15]])
+vim.cmd([[highlight DiffText guibg=#454545]])
 
 -- =========================
 -- Tab / Indent

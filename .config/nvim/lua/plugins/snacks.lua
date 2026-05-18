@@ -31,13 +31,6 @@ return {
       desc = 'Find files',
     },
     {
-      '<leader>fG',
-      function()
-        Snacks.picker.git_status()
-      end,
-      desc = 'Git status',
-    },
-    {
       '<leader>fb',
       function()
         Snacks.picker.buffers()
@@ -59,7 +52,14 @@ return {
       desc = 'Grep',
     },
     {
-      '<leader>gl',
+      '<leader>gs',
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = 'Git status',
+    },
+    {
+      '<leader>gg',
       function()
         Snacks.lazygit()
       end,
