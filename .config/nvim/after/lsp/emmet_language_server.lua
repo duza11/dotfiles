@@ -4,7 +4,6 @@ return {
     'eruby',
     'html',
     'riot',
-    'javascript',
     'javascriptreact',
     'less',
     'sass',

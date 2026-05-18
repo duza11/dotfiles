@@ -54,7 +54,7 @@ return {
     {
       '<leader>fg',
       function()
-        Snacks.picker.files({ hidden = true })
+        Snacks.picker.grep({ hidden = true })
       end,
       desc = 'Grep',
     },
