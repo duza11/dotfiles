@@ -146,6 +146,7 @@ return {
         'emmet_language_server',
         'eslint',
         'html',
+        'jsonls',
         'lua_ls',
         'nixd',
         'ts_ls',
