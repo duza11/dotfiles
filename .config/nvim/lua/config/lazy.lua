@@ -28,4 +28,5 @@ require('lazy').setup({
   },
   install = { colorscheme = { 'vscode' } },
   checker = { enabled = true },
+  lockfile = '~/ghq/github.com/duza11/dotfiles/.config/nvim/lazy-lock.json',
 })

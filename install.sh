@@ -63,6 +63,7 @@ shift || true
 case $subcommand in
 	install)
 		install_dotfiles
+		ghq get dotfiles
 		;;
 	update)
 		upgrade=false
