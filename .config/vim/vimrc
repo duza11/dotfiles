@@ -119,5 +119,12 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" コマンドラインの操作
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-h> <BS>
+cnoremap <C-d> <Del>
 " Riot.js v3
 autocmd BufRead,BufNewFile *.tag set filetype=riot

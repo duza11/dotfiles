@@ -115,6 +115,27 @@ return {
       fuzzy = {
         implementation = 'prefer_rust_with_warning',
       },
+      cmdline = {
+        keymap = {
+          ['<Esc>'] = {
+            function(cmp)
+              if cmp.is_menu_visible() then
+                return cmp.cancel()
+              end
+            end,
+
+            'fallback',
+          },
+          ['<CR>'] = {
+            function(cmp)
+              if cmp.is_menu_visible() then
+                return cmp.accept()
+              end
+            end,
+            'fallback',
+          },
+        },
+      },
     },
     opts_extend = {
       'sources.default',
