@@ -117,14 +117,15 @@ return {
       },
       cmdline = {
         keymap = {
+          -- https://github.com/Saghen/blink.cmp/issues/547
           ['<Esc>'] = {
             function(cmp)
-              if cmp.is_menu_visible() then
-                return cmp.cancel()
+              if cmp.is_visible() then
+                cmp.cancel()
+              else
+                vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-c>', true, true, true), 'n', true)
               end
             end,
-
-            'fallback',
           },
           ['<CR>'] = {
             function(cmp)
