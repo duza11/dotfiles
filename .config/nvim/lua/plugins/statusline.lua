@@ -4,10 +4,11 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      'SmiteshP/nvim-navic',
     },
     opts = {
       options = {
-        theme = 'wombat',
+        theme = 'onedark',
         component_separators = {
           left = '',
           right = '',
@@ -27,7 +28,14 @@ return {
         lualine_c = {
           {
             'filename',
-            path = 0,
+            path = 1,
+          },
+          {
+            'navic',
+            cond = function()
+              return require('nvim-navic').is_available()
+            end,
+            color_correction = 'dynamic',
           },
         },
         lualine_x = {
@@ -42,6 +50,29 @@ return {
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
+      tabline = {
+        lualine_a = {
+          {
+            'buffers',
+            mode = 4,
+          },
+        },
+        lualine_z = { 'tabs' },
+      },
+    },
+  },
+  {
+    'SmiteshP/nvim-navic',
+    event = { 'BufNewFile', 'BufReadPre' },
+    opts = {
+      depth_limit = 3,
+      lsp = {
+        auto_attach = true,
+      },
+      highlight = true,
+    },
+    dependencies = {
+      'neovim/nvim-lspconfig',
     },
   },
 }

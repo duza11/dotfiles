@@ -20,6 +20,15 @@ vim.keymap.set('n', 'k', function()
     return "m'" .. vim.v.count .. 'k'
   end
 end, { expr = true })
+vim.keymap.set('n', 'gb', '<cmd>bnext<CR>', {
+  desc = 'Go to next buffer',
+})
+vim.keymap.set('n', 'gB', '<cmd>bprevious<CR>', {
+  desc = 'Go to previouos buffer',
+})
+vim.keymap.set('n', '<C-x>', '<cmd>bdelete<CR>', {
+  desc = 'Delete buffer',
+})
 vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>', {
   desc = 'Clear search highlight',
   silent = true,
