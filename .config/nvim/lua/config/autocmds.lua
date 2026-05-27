@@ -1,8 +1,11 @@
-vim.api.nvim_create_augroup('MyAutoCmd', { clear = true })
-
--- Riot.js v3はHTMLとして扱う
-vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
-  group = 'MyAutoCmd',
-  pattern = '*.tag',
-  command = 'set filetype=riot',
+vim.api.nvim_create_autocmd('VimEnter', {
+  once = true,
+  callback = function()
+    vim.fn.matchadd('ExtraWhitespace', '[\\u00A0\\u2000-\\u200B\\u3000]')
+    vim.api.nvim_set_hl(0, 'ExtraWhitespace', {
+      bg = 'darkmagenta',
+      ctermbg = 'darkmagenta',
+      default = true,
+    })
+  end,
 })

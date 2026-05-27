@@ -113,3 +113,12 @@ vim.opt.incsearch = true
 vim.opt.wrapscan = true
 -- 検索語をハイライト表示
 vim.opt.hlsearch = true
+
+-- =========================
+-- FileType
+-- =========================
+vim.filetype.add({
+  extension = {
+    tag = 'riot',
+  },
+})
