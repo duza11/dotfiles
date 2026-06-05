@@ -12,6 +12,7 @@ return {
         'nix',
         'markdown',
         'markdown_inline',
+        'scss',
         'toml',
         'typescript',
         'javascript',
@@ -20,7 +21,7 @@ return {
         'yaml',
         'zsh',
       })
-      vim.treesitter.language.register('html', 'riot')
+      vim.treesitter.language.register('html', 'riot_v3')
       vim.opt.foldmethod = 'expr'
       vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
       vim.api.nvim_create_autocmd('FileType', {
@@ -29,6 +30,7 @@ return {
           'lua',
           'nix',
           'markdown',
+          'scss',
           'toml',
           'typescript',
           'javascript',
@@ -53,7 +55,7 @@ return {
     },
     config = function()
       vim.api.nvim_create_autocmd('FileType', {
-        pattern = { 'html', 'riot' },
+        pattern = { 'html', 'riot_v3' },
         callback = function()
           require('otter').activate({ 'javascript', 'css' })
         end,

@@ -119,6 +119,6 @@ vim.opt.hlsearch = true
 -- =========================
 vim.filetype.add({
   extension = {
-    tag = 'riot',
+    tag = 'riot_v3',
   },
 })

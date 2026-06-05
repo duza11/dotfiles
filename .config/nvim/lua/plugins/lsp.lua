@@ -82,7 +82,23 @@ return {
     },
     opts = {
       keymap = {
-        preset = 'enter',
+        -- https://github.com/Saghen/blink.cmp/issues/547
+        ['<Esc>'] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.cancel()
+            end
+          end,
+          'fallback',
+        },
+        ['<CR>'] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.accept()
+            end
+          end,
+          'fallback',
+        },
       },
       appearance = {
         nerd_font_variant = 'mono',

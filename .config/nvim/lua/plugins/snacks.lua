@@ -83,14 +83,14 @@ return {
       desc = 'Toggle terminal',
     },
     {
-      'cc',
+      '<leader>cc',
       function()
         Snacks.picker.commands()
       end,
       desc = 'Commands',
     },
     {
-      'ch',
+      '<leader>ch',
       function()
         Snacks.picker.command_history()
       end,
