@@ -19,7 +19,6 @@ in
   xdg.configFile = {
     ghostty = mkConfig "ghostty";
     karabiner = mkConfig "karabiner";
-    "zsh/.zprofile".source = ../../.config/zsh/.zprofile;
   };
   programs = {
     zsh = {
@@ -28,6 +27,7 @@ in
       initContent = builtins.readFile ../../.config/zsh/.zshrc;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+      profileExtra = builtins.readFile ../../.config/zsh/.zprofile;
     };
   };
 }
