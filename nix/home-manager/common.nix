@@ -27,6 +27,7 @@ in
       nixd
       nixfmt
       ripgrep
+      stylelint-lsp
       stylua
       tmux
       tree-sitter

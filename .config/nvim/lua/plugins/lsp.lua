@@ -187,6 +187,7 @@ return {
         'jsonls',
         'lua_ls',
         'nixd',
+        'stylelint_lsp',
         'ts_ls',
       })
     end,

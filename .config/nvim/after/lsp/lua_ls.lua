@@ -1,5 +1,6 @@
 require('lazydev').setup()
 
+---@type vim.lsp.Config
 return {
   settings = {
     Lua = {

@@ -1,3 +1,4 @@
+---@type vim.lsp.Config
 return {
   on_attach = function(client, bufnr)
     if client:supports_method('textDocument/inlayHint') then

@@ -1,9 +1,10 @@
+---@type vim.lsp.Config
 return {
   filetypes = {
     'css',
     'eruby',
     'html',
-    'riot',
+    'riot_v3',
     'javascriptreact',
     'less',
     'sass',
