@@ -10,6 +10,11 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+  pattern = '*',
+  command = 'checktime',
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'riot_v3', 'javascript' },
   callback = function()
