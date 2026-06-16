@@ -7,4 +7,5 @@ return {
     'less',
   },
   root_markers = { '.git' },
+  init_options = { provideFormatter = false },
 }
