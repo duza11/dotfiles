@@ -28,6 +28,18 @@ gcd() {
   [ -n "$dir" ] && cd "$dir"
 }
 
+nvim() {
+	if [ -z "$NVIM" ]; then
+		command nvim -p "$@"
+	else
+		if [ "$#" -eq 0 ]; then
+			echo "Error: Cannot start nvim inside nvim terminal."
+			return 1
+		fi
+		command nvim --server "$NVIM" --remote "$@"
+	fi
+}
+
 source <(fzf --zsh)
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --follow --exclude ".git/"'
 export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid --line-range :30 {}"'

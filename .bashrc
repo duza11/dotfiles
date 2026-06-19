@@ -47,6 +47,18 @@ gcd() {
 	[ -n "$dir" ] && cd "$dir"
 }
 
+nvim() {
+	if [ -z "$NVIM" ]; then
+		command nvim -p "$@"
+	else
+		if [ "$#" -eq 0 ]; then
+			echo "Error: Cannot start nvim inside nvim terminal."
+			return 1
+		fi
+		command nvim --server "$NVIM" --remote "$@"
+	fi
+}
+
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 
 # User rc fragments
