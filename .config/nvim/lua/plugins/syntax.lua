@@ -1,3 +1,16 @@
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'TSUpdate',
+  callback = function()
+    require('nvim-treesitter.parsers').riot_v3 = {
+      install_info = {
+        url = 'https://github.com/duza11/tree-sitter-riot-v3',
+        revision = 'd231b8261fe2832a6610944fa17d4b81deb23048',
+        queries = 'queries/riot_v3',
+      },
+      tier = 2,
+    }
+  end,
+})
 return {
   {
     'nvim-treesitter/nvim-treesitter',
@@ -12,6 +25,7 @@ return {
         'nix',
         'markdown',
         'markdown_inline',
+        'riot_v3',
         'scss',
         'toml',
         'typescript',
@@ -21,7 +35,6 @@ return {
         'yaml',
         'zsh',
       })
-      vim.treesitter.language.register('html', 'riot_v3')
       vim.opt.foldmethod = 'expr'
       vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
       vim.api.nvim_create_autocmd('FileType', {
@@ -30,6 +43,7 @@ return {
           'lua',
           'nix',
           'markdown',
+          'riot_v3',
           'scss',
           'toml',
           'typescript',
