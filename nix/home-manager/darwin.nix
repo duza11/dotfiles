@@ -29,5 +29,8 @@ in
       syntaxHighlighting.enable = true;
       profileExtra = builtins.readFile ../../.config/zsh/.zprofile;
     };
+    direnv = {
+      enableZshIntegration = true;
+    };
   };
 }

@@ -30,5 +30,8 @@ in
       + builtins.readFile ../../.bashrc;
       enableCompletion = true;
     };
+    direnv = {
+      enableBashIntegration = true;
+    };
   };
 }
