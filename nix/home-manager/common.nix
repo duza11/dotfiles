@@ -18,6 +18,7 @@ in
       emmet-language-server
       fd
       fzf
+      gh
       ghq
       git
       gopls
