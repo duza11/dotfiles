@@ -20,6 +20,7 @@ in
       fzf
       ghq
       git
+      gopls
       lazygit
       lua-language-server
       meteor-git

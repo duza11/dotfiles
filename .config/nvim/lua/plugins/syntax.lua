@@ -20,6 +20,7 @@ return {
       require('nvim-treesitter').install({
         'bash',
         'css',
+        'go',
         'html',
         'lua',
         'nix',
@@ -39,7 +40,9 @@ return {
       vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
       vim.api.nvim_create_autocmd('FileType', {
         pattern = {
+          'go',
           'html',
+          'javascript',
           'lua',
           'nix',
           'markdown',
@@ -47,7 +50,6 @@ return {
           'scss',
           'toml',
           'typescript',
-          'javascript',
           'yaml',
         },
         callback = function()
