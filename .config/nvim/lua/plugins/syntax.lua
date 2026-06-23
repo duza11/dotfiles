@@ -29,6 +29,7 @@ return {
         'riot_v3',
         'scss',
         'toml',
+        'tsx',
         'typescript',
         'javascript',
         'vim',
@@ -50,6 +51,7 @@ return {
           'scss',
           'toml',
           'typescript',
+          'typescriptreact',
           'yaml',
         },
         callback = function()
