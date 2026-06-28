@@ -74,6 +74,8 @@ vim.cmd([[highlight DiffAdd guibg=#214821]])
 vim.cmd([[highlight DiffChange guibg=#303030]])
 vim.cmd([[highlight DiffDelete guibg=#4c1e15]])
 vim.cmd([[highlight DiffText guibg=#454545]])
+-- CursorHold発火までの時間
+vim.opt.updatetime = 500
 
 -- =========================
 -- Tab / Indent

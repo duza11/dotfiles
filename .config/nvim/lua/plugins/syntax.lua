@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd('User', {
     require('nvim-treesitter.parsers').riot_v3 = {
       install_info = {
         url = 'https://github.com/duza11/tree-sitter-riot-v3',
-        revision = 'e154be6e42e8e016bc2c0255bf9492bfb1a77ae6',
+        revision = '94c670ee3b808210674119886f0a1071fcb01af9',
         queries = 'queries/riot_v3',
       },
       tier = 2,
@@ -54,8 +54,14 @@ return {
           'typescriptreact',
           'yaml',
         },
-        callback = function()
+        callback = function(args)
           vim.treesitter.start()
+          --すぐに実行すると何故か適用されないので遅延させる
+          vim.defer_fn(function()
+            if vim.api.nvim_buf_is_valid(args.buf) then
+              vim.bo[args.buf].indentexpr = [[v:lua.require'nvim-treesitter'.indentexpr()]]
+            end
+          end, 100)
         end,
       })
     end,
