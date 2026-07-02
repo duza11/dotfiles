@@ -66,24 +66,4 @@ return {
       })
     end,
   },
-
-  {
-    'jmbuhr/otter.nvim',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-    opts = {
-      lsp = {
-        diagnostic_update_events = { 'TextChanged' },
-      },
-    },
-    config = function()
-      vim.api.nvim_create_autocmd('FileType', {
-        pattern = { 'html', 'riot_v3' },
-        callback = function()
-          require('otter').activate({ 'javascript', 'css' })
-        end,
-      })
-    end,
-  },
 }

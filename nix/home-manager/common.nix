@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   ...
 }:
@@ -29,6 +30,7 @@ in
       nixd
       nixfmt
       ripgrep
+      inputs.riot-v3-language-server.packages.${pkgs.stdenv.hostPlatform.system}.default
       stylelint-lsp
       stylua
       tmux
