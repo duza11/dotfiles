@@ -176,6 +176,20 @@ return {
         callback = function(args)
           local opts = { buffer = args.buf, silent = true }
           vim.keymap.set('n', 'K', hover, opts)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if client and client:supports_method('textDocument/documentHighlight') then
+            local group = vim.api.nvim_create_augroup('lsp_document_highlight', { clear = true })
+            vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+              buffer = args.buf,
+              group = group,
+              callback = vim.lsp.buf.document_highlight,
+            })
+            vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufLeave' }, {
+              buffer = args.buf,
+              group = group,
+              callback = vim.lsp.buf.clear_references,
+            })
+          end
         end,
       })
 
