@@ -102,6 +102,15 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+vim.api.nvim_create_user_command('Indent', function(opts)
+  local width = tonumber(opts.fargs[1])
+  vim.bo.tabstop = width
+  vim.bo.shiftwidth = width
+end, {
+  desc = 'Set indent width',
+  nargs = 1,
+})
+
 -- =========================
 -- Search
 -- =========================
