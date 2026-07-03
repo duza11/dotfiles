@@ -246,11 +246,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1782999791,
-        "narHash": "sha256-DXIn2Vpp1cGeim46YvGjdUgM24WclDtv4SNrZE/OKzk=",
+        "lastModified": 1783077941,
+        "narHash": "sha256-dCgmF6RvRJb7nHkXXS54WN1n5AbJ2Pny4S+u9DhBC84=",
         "owner": "duza11",
         "repo": "riot-v3-language-server",
-        "rev": "0fc2efbb7ac4a5d6d4828e838778f48d7fad2073",
+        "rev": "cf79cbc2519f23d5d66d5ddc384c0718843ecda6",
         "type": "github"
       },
       "original": {
