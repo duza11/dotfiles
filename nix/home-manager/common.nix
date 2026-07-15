@@ -14,7 +14,6 @@ in
     stateVersion = "25.11"; # Please read the comment before changing."
     packages = with pkgs; [
       bat
-      commitizen
       delta
       emmet-language-server
       fd
@@ -31,7 +30,9 @@ in
       nixfmt
       ripgrep
       inputs.riot-v3-language-server.packages.${pkgs.stdenv.hostPlatform.system}.default
-      stylelint-lsp
+      # pnpmバージョンによりアップデート出来ないため一時的に除外する
+      # https://github.com/NixOS/nixpkgs/pull/536260
+      # stylelint-lsp
       stylua
       tmux
       tree-sitter
