@@ -15,6 +15,13 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
   command = 'checktime',
 })
 
+vim.api.nvim_create_autocmd('CmdUndefined', {
+  pattern = { 'Cfilter', 'Lfilter' },
+  callback = function()
+    vim.cmd.packadd('cfilter')
+  end,
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'riot_v3', 'javascript' },
   callback = function()

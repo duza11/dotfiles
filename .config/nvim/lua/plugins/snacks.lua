@@ -106,21 +106,21 @@ return {
     {
       'gri',
       function()
-        Snacks.picker.lsp_implementations()
+        Snacks.picker.lsp_implementations({ include_current = true })
       end,
       desc = 'LSP implementaions',
     },
     {
       'grr',
       function()
-        Snacks.picker.lsp_references()
+        Snacks.picker.lsp_references({ include_current = true })
       end,
       desc = 'LSP referencs',
     },
     {
       'grt',
       function()
-        Snacks.picker.lsp_type_definitions()
+        Snacks.picker.lsp_type_definitions({ include_current = true })
       end,
       desc = 'LSP type definitions',
     },

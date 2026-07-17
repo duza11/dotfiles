@@ -42,8 +42,18 @@ vim.keymap.set('n', '<leader>Y', '"+yy', {
 vim.keymap.set('t', '<C-[><C-[>', '<C-\\><C-n>', {
   desc = 'Switch to terminal normal mode',
 })
-vim.keymap.set('n', '<leader>ll', function()
+vim.keymap.set('n', '<leader>ul', function()
   vim.wo.relativenumber = not vim.wo.relativenumber
 end, {
   desc = 'Toggle relative line number',
+})
+vim.keymap.set('n', '<leader>us', function()
+  vim.opt.spell = not vim.opt_local.spell:get()
+end, {
+  desc = 'Toggle spell check',
+})
+vim.keymap.set('n', 'grd', function()
+  vim.lsp.buf.definition()
+end, {
+  desc = 'LSP jump to definition',
 })
