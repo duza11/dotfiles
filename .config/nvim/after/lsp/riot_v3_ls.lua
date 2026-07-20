@@ -7,4 +7,7 @@ return {
   },
   filetypes = { 'riot_v3' },
   root_markers = { 'package.json', 'tsconfig.json', 'tsconfig.json', '.git' },
+  init_options = {
+    allowDynamicPropertiesFromAnyAssignments = true,
+  },
 }
