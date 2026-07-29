@@ -30,9 +30,7 @@ in
       nixfmt
       ripgrep
       inputs.riot-v3-language-server.packages.${pkgs.stdenv.hostPlatform.system}.default
-      # pnpmバージョンによりアップデート出来ないため一時的に除外する
-      # https://github.com/NixOS/nixpkgs/pull/536260
-      # stylelint-lsp
+      stylelint-lsp
       stylua
       tmux
       tree-sitter
