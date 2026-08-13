@@ -12,6 +12,8 @@ in
     homeDirectory = "/home/${username}";
     packages = with pkgs; [
       blesh
+      cloc
+      cyclonedx-cli
     ];
     file = {
     };
