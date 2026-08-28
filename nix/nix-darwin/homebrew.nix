@@ -9,6 +9,7 @@
     brews = [ ];
     casks = [
       "alt-tab"
+      "chatgpt"
       "ghostty"
       "google-chrome"
       "google-japanese-ime"
