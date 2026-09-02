@@ -9,6 +9,7 @@ in
 {
   home = {
     packages = with pkgs; [
+      codex
       nerd-fonts.jetbrains-mono
       zsh-completions
     ];
