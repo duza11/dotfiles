@@ -22,6 +22,7 @@ in
       ghq
       git
       gopls
+      inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       lazygit
       lua-language-server
       meteor-git
@@ -43,6 +44,7 @@ in
   };
   xdg.configFile = {
     git = mkConfig "git";
+    herdr = mkConfig "herdr";
     lazygit = mkConfig "lazygit";
     nix = mkConfig "nix";
     nvim = mkConfig "nvim";
