@@ -10,6 +10,7 @@ return {
   init_options = {
     riotV3 = {
       allowDynamicPropertiesFromAnyAssignments = true,
+      reportUnusedComponentMembers = true,
     },
   },
 }
