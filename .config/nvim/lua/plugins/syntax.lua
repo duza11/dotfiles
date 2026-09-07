@@ -4,7 +4,7 @@ vim.api.nvim_create_autocmd('User', {
     require('nvim-treesitter.parsers').riot_v3 = {
       install_info = {
         url = 'https://github.com/duza11/tree-sitter-riot-v3',
-        revision = '7036952a3836dfc069d8c528ff370708718d146d',
+        revision = '2f545588071e79e30ed49b5bd947a19cd4f32232',
         queries = 'queries/riot_v3',
       },
       tier = 2,
