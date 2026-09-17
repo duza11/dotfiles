@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     herdr = {
-      url = "github:herdrdev/herdr/v0.8.2";
+      url = "github:herdrdev/herdr/v0.9.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     riot-v3-language-server.url = "github:duza11/riot-v3-language-server";
