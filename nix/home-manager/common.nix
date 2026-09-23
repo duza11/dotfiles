@@ -35,7 +35,7 @@ in
       stylua
       tmux
       tree-sitter
-      typescript-language-server
+      typescript
       vim
       vscode-langservers-extracted
     ];

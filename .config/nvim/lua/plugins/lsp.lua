@@ -150,7 +150,7 @@ return {
         'nixd',
         'riot_v3_ls',
         'stylelint_lsp',
-        'ts_ls',
+        'tsc',
       })
     end,
   },
