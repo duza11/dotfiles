@@ -5,6 +5,7 @@
         AppleInterfaceStyle = "Dark";
         AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
+        "com.apple.keyboard.fnState" = true;
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         NSWindowResizeTime = 0.001;
@@ -21,7 +22,7 @@
         mineffect = "scale";
         orientation = "bottom";
         wvous-bl-corner = 1;
-        wvous-br-corner = 4;
+        wvous-br-corner = 1;
         wvous-tl-corner = 1;
         wvous-tr-corner = 1;
       };
