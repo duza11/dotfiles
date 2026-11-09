@@ -14,6 +14,7 @@ in
     stateVersion = "25.11"; # Please read the comment before changing."
     packages = with pkgs; [
       bat
+      curl
       delta
       emmet-language-server
       fd
